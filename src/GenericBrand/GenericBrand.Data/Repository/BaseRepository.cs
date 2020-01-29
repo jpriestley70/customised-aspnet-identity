@@ -134,7 +134,7 @@ namespace GenericBrand.Data.Repository
             int records = Items(filter).Count();
             int pages = records / pageSize;
 
-            if ((pages * pageSize) < records) { pages = pages + 1; }
+            if ((pages * pageSize) < records) { pages += 1; }
 
             return pages;
         }
@@ -150,7 +150,7 @@ namespace GenericBrand.Data.Repository
             int records = (await ItemsAsync(filter)).Count();
             int pages = records / pageSize;
 
-            if ((pages * pageSize) < records) { pages = pages + 1; }
+            if ((pages * pageSize) < records) { pages += 1; }
 
             return pages;
         }
