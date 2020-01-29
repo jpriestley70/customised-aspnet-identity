@@ -1,0 +1,14 @@
+﻿Migrations
+~~~~~~~~~~
+Add-Migration MigrationName -Project GenericBrand.Data
+
+
+Update Database
+~~~~~~~~~~~~~~~
+Update-Database
+
+
+Remove Migration
+~~~~~~~~~~~~~~~~
+Remove-Migration -Project GenericBrand.Data
+

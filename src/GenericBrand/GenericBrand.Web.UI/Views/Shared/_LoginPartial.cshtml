@@ -1,0 +1,28 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject ApplicationSignInManager SignInManager
+@inject ApplicationUserManager UserManager
+
+<ul class="navbar-nav">
+@if (SignInManager.IsSignedIn(User))
+{
+    <li class="nav-item">
+        <a  class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">
+            <resx resx-group="Shared" resx-name="HelloUser" resx-param-0="@(UserManager.ToStringDisplayName(User))">Greetings {0}!</resx>
+        </a>
+    </li>
+    <li class="nav-item">
+        <form  class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+            <button  type="submit" class="nav-link btn btn-link text-dark"><resx resx-group="Shared" resx-name="Logout">Logout</resx></button>
+        </form>
+    </li>
+}
+else
+{
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register"><resx resx-group="Shared" resx-name="Register">Register</resx></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login"><resx resx-group="Shared" resx-name="Login">Login</resx></a>
+    </li>
+}
+</ul>

@@ -1,0 +1,9 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+
+  },
+  "ConnectionStrings": {
+    "AppDbConnection": "Server=(local);Initial Catalog=GenericBrand;User=yourdbuser;Password=yourdbpwd123"
+  }
+}
